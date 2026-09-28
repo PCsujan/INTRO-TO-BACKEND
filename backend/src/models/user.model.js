@@ -26,7 +26,13 @@ const userSchema = new Schema(
             unique: true,
             lowercase: true,
             trim: true,
+        },
+
+       loggedIn: {
+            type: Boolean,
+            default: false
         }
+
     },
 
     {

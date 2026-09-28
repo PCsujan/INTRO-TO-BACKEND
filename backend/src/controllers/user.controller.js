@@ -64,7 +64,47 @@ const loginUser = async (req, res) =>{
     }
 }
 
+const logoutUser = async (req, res) => {
+    try {
+        // Get email from request body
+        const { email } = req.body;
+
+        // Find user
+        const user = await User.findOne({
+            email: email.toLowerCase(),
+        });
+
+        // Check if user exists
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found!",
+            });
+        }
+
+        // Logout user
+        user.loggedIn = false;
+        await user.save();
+
+        // Send response
+        res.status(200).json({
+            message: "user logout successful",
+            user: {
+                id: user._id,
+                email: user.email,
+                username: user.username,
+                loggedIn: user.loggedIn,
+            },
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Internal server Error",
+            error: error.message,
+        });
+    }
+};
+
 export {
     registerUser,
-    loginUser
+    loginUser,
+    logoutUser,
 };
