@@ -52,6 +52,7 @@ Postman	API Testing
 Nodemon	Development Server
 Git & GitHub	Version Control
 📂 Project Structure
+Backend Directory
 backend/
 ├── src/
 │   ├── config/
@@ -129,10 +130,13 @@ Current API Testing
 ✅ Delete Post by ID
 
 📌 Current Progress
+Backend
 
  Backend server setup
 
  MongoDB connection
+
+Authentication
 
  User registration API
 
@@ -142,6 +146,8 @@ Current API Testing
 
  Password hashing
 
+Post CRUD
+
  Create Post API
 
  Get All Posts API
@@ -150,7 +156,11 @@ Current API Testing
 
  Delete Post by ID API
 
+Testing
+
  Postman API testing
+
+Upcoming
 
  Additional validation and error handling
 
@@ -163,7 +173,6 @@ This project is developed for learning and practicing backend development with N
 The project will continue to evolve as new backend concepts and features are implemented.
 
 👨‍💻 Author
-
 PCsujan
 
 Built with ❤️ while learning backend development.
